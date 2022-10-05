@@ -31,7 +31,6 @@
     "test": "node_modules/.bin/mocha --reporter spec"
   },
   "dependencies": {
-    "chalk": "^2.4.2",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
