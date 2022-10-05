@@ -19,7 +19,6 @@
 // THE SOFTWARE.
 //
 var winston = require('winston');
-var chalk = require('chalk');
 
 var _ = require('lodash');
 
@@ -132,11 +131,6 @@ function filterObject(originalObj, whiteList, headerBlacklist, initialFilter) {
 function getTemplate(loggerOptions, templateOptions) {
     if (loggerOptions.expressFormat) {
         var expressMsgFormat = '{{req.method}} {{req.url}} {{res.statusCode}} {{res.responseTime}}ms';
-        if (loggerOptions.colorize) {
-            expressMsgFormat = chalk.grey('{{req.method}} {{req.url}}') +
-                ' {{res.statusCode}} ' +
-                chalk.grey('{{res.responseTime}}ms');
-        }
 
         return _.template(expressMsgFormat, templateOptions);
     }
